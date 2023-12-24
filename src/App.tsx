@@ -1,9 +1,18 @@
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "./styles/global";
+import { defaultTheme } from "./styles/themes/default";
+
+import { Transactions } from "./pages/Transactions";
+
+
 const App = () => {
   return (
-    <div>
-      <h1>Olá Mundo !</h1>
-    </div>
-  )
-}
+    <ThemeProvider theme={defaultTheme}>
+      <GlobalStyle />
 
-export default App
+      <Transactions />
+    </ThemeProvider>
+  );
+};
+
+export default App;

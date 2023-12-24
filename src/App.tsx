@@ -4,13 +4,16 @@ import { defaultTheme } from "./styles/themes/default";
 
 import { Transactions } from "./pages/Transactions";
 
+import { TransactionsProvider } from "./contexts/TransactionsContext";
 
 const App = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
 
-      <Transactions />
+      <TransactionsProvider>
+        <Transactions />
+      </TransactionsProvider>
     </ThemeProvider>
   );
 };
